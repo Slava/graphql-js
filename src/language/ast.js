@@ -217,7 +217,7 @@ export type OperationDefinitionNode = {
   +selectionSet: SelectionSetNode,
 };
 
-export type OperationTypeNode = 'query' | 'mutation' | 'subscription';
+export type OperationTypeNode = 'query' | 'mutation' | 'subscription' | 'permission';
 
 export type VariableDefinitionNode = {
   +kind: 'VariableDefinition',

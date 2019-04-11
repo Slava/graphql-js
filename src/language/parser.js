@@ -217,6 +217,7 @@ function parseDefinition(lexer: Lexer<*>): DefinitionNode {
       case 'mutation':
       case 'subscription':
       case 'fragment':
+      case 'permission':
         return parseExecutableDefinition(lexer);
       case 'schema':
       case 'scalar':
@@ -250,6 +251,7 @@ function parseExecutableDefinition(lexer: Lexer<*>): ExecutableDefinitionNode {
       case 'query':
       case 'mutation':
       case 'subscription':
+      case 'permission':
         return parseOperationDefinition(lexer);
 
       case 'fragment':
@@ -310,6 +312,8 @@ function parseOperationType(lexer: Lexer<*>): OperationTypeNode {
       return 'mutation';
     case 'subscription':
       return 'subscription';
+    case 'permission':
+      return 'permission';
   }
 
   throw unexpected(lexer, operationToken);
